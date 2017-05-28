@@ -6,17 +6,25 @@ import java.util.Scanner;
  */
 public class GuessingGame {
     public static void main(String arg[]){
-        int humanAttempt=humanGuess();
-        System.out.println("Now its computer's turn to Guess !!!");
-        int compAttempt=computerGuess();
-        if (humanAttempt==compAttempt){
-            System.out.println("********** MAtch Draw ***********");
+        String play="y";
+        while(play.equals("y") || play.equals("Y") || play.equals("yes") || play.equals("YES")){
+            int humanAttempt=humanGuess();
+            System.out.println("Now its computer's turn to Guess !!!");
+            int compAttempt=computerGuess();
+            if (humanAttempt==compAttempt){
+                System.out.println("********** Match Draw ***********");
+            }
+            if(humanAttempt<compAttempt){
+                System.out.println("******** Congratulation You Win ********");
+            }
+            else
+                System.out.println("************* You lose *********");
+
+            System.out.print("do you want to play more: ");
+            Scanner input = new Scanner(System.in);
+            play=input.next();
         }
-        if(humanAttempt>compAttempt){
-            System.out.println("******** Congratualation You Win ********");
-        }
-        else
-            System.out.println("************* You lose *********");
+
     }
 
     public static int computerGuess(){
