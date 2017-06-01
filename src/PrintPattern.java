@@ -3,36 +3,36 @@
  */
 public class PrintPattern {
     public static void main(String arg[]){
-        p1();
+        p1(10);
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-        p2();
+        p2(10);
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-        p3();
+        p3(15);
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-        p4();
+        p4(15);
     }
-    public static void p1(){
+    public static void p1(int max){
         int i,j;
-        for(i=0;i<5;i++){
+        for(i=0;i<max;i++){
             for(j=0;j<=i;j++){
                 System.out.print("*");
             }
             System.out.println("");
         }
     }
-    public static void p2(){
+    public static void p2(int max){
         int i,j;
-        for(i=0;i<5;i++){
-            for(j=5;j>i;j--){
+        for(i=0;i<max;i++){
+            for(j=max;j>i;j--){
                 System.out.print("*");
             }
             System.out.println("");
         }
     }
-    public static void p3(){
+    public static void p3(int max){
         int i,j;
-        for(i=0;i<5;i++){
-            for(j=0;j<5;j++){
+        for(i=0;i<max;i++){
+            for(j=0;j<max;j++){
                 if(j<i){
                     System.out.print(" ");
                 }
@@ -42,8 +42,8 @@ public class PrintPattern {
             System.out.println("");
         }
     }
-    public static void p4(){
-        int i,j,max=5;
+    public static void p4(int max){
+        int i,j;
         int temp=max;
         for(i=0;i<max;i++){
             for(j=0;j<max;j++){
