@@ -10,6 +10,10 @@ public class PrintPattern {
         p3(15);
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         p4(15);
+        System.out.println("``````````````````````````````````````````````");
+        pyramid();
+        System.out.println("``````````````````````````````````````````````");
+        diamond();
     }
     public static void p1(int max){
         int i,j;
@@ -55,6 +59,54 @@ public class PrintPattern {
             }
             System.out.println("");
             temp--;
+        }
+    }
+    public static void pyramid(){
+        int i,j,imax=16, jmax=16, next=8;
+        for(i=0;i<=imax;i++){
+
+            for(j=0;j<=next;j++){
+                if(j<jmax){
+                    System.out.print(" ");
+                }
+                else {
+                    System.out.print("*");
+                }
+
+
+            }
+            System.out.println("");
+                next++;
+                jmax--;
+
+
+        }
+    }
+
+    public static void diamond(){
+        int i,j,imax=16, jmax=8, next=8;
+        for(i=0;i<=imax;i++){
+
+            for(j=0;j<=next;j++){
+                if(j<jmax){
+                    System.out.print(" ");
+                }
+                else {
+                    System.out.print("*");
+                }
+
+
+            }
+            System.out.println("");
+            if((i<imax/2)){
+                next++;
+                jmax--;
+            }
+            else{
+                next--;
+                jmax++;
+            }
+
         }
     }
 }
