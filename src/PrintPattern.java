@@ -14,6 +14,12 @@ public class PrintPattern {
         pyramid();
         System.out.println("``````````````````````````````````````````````");
         diamond();
+        System.out.println("``````````````````````````````````````````````");
+        arrowPoint();
+        System.out.println("``````````````````````````````````````````````");
+        invertedPyramid();
+        System.out.println("``````````````````````````````````````````````");
+        filledX();
     }
     public static void p1(int max){
         int i,j;
@@ -105,6 +111,63 @@ public class PrintPattern {
             else{
                 next--;
                 jmax++;
+            }
+
+        }
+    }
+    public static void arrowPoint(){
+        int i,j,imax=13, jmax=1;
+        for(i=0;i<imax;i++){
+            for(j=1;j<=jmax;j++){
+                System.out.print(j);
+            }
+            System.out.println("");
+            if((i<imax/2)){
+                jmax++;
+            }
+            else{
+                jmax--;
+            }
+
+        }
+    }
+
+
+    public static void invertedPyramid(){
+        int i,j,imax=7,jmax=15,next=0;
+        for(i=0;i<=imax;i++){
+            for(j=0;j<jmax;j++){
+                if(j<next){
+                    System.out.print(" ");
+                }
+                else{
+                    System.out.print("j");
+                }
+            }
+            System.out.println("");
+            jmax--;
+            next++;
+        }
+    }
+    public static void filledX(){
+        int i,j,imax=15,jmax=15,next=0;
+        for(i=0;i<imax;i++){
+            for(j=0;j<jmax;j++){
+                if(j<next){
+                    System.out.print(" ");
+                }
+                else{
+                    System.out.print("j");
+                }
+            }
+            System.out.println("");
+            if(i<imax/2){
+                jmax--;
+                next++;
+            }
+            else{
+                jmax++;
+                next--;
             }
 
         }
