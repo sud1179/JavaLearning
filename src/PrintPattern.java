@@ -20,8 +20,25 @@ public class PrintPattern {
         invertedPyramid();
         System.out.println("``````````````````````````````````````````````");
         filledX();
+        System.out.println("``````````````````````````````````````````````");
+        p5();
+        System.out.println("``````````````````````````````````````````````");
+        spaceDiamond();
+        System.out.println("``````````````````````````````````````````````");
+        sPrint();
+        System.out.println("``````````````````````````````````````````````");
+        sPattern();
+        System.out.println("``````````````````````````````````````````````");
+        oneLoopPattern();
+        System.out.println("``````````````````````````````````````````````");
+        oneLoopPyramid();
+        System.out.println("``````````````````````````````````````````````");
+        oneLoopDimond();
+
+
     }
-    public static void p1(int max){
+    public static void p1(int max){System.out.println("``````````````````````````````````````````````");
+        sPrint();
         int i,j;
         for(i=0;i<max;i++){
             for(j=0;j<=i;j++){
@@ -170,6 +187,173 @@ public class PrintPattern {
                 next--;
             }
 
+        }
+    }
+
+    public static void p5(){
+        int i,j,imax=20,jmax=10;
+        for(i=0;i<=imax;i++){
+            for(j=0;j<=jmax;j++){
+                System.out.print("*");
+            }
+            System.out.println("");
+            if(i<imax/2){
+                jmax--;
+            }
+            else{
+                jmax++;
+            }
+
+        }
+    }
+    public static void spaceDiamond(){
+        int i,j,imax=20,jmax=20,mid1=jmax/2,mid2=jmax/2;
+        for(i=0;i<=imax;i++){
+            for(j=0;j<=jmax;j++){
+                if((j>mid1)&&(j<mid2)){
+                    System.out.print(" ");
+                }
+                else{
+                    System.out.print("*");
+                }
+            }
+            System.out.println("");
+            if(i<imax/2){
+                mid1--;
+                mid2++;
+            }
+            else{
+                mid1++;
+                mid2--;
+            }
+
+        }
+    }
+    public static void sPrint(){
+        int i,j,imax=8, jmax=8, next=8;
+        for(i=0;i<=imax;i++){
+
+            for(j=0;j<=next;j++){
+               if((j==jmax)||(j==next)){
+                    System.out.print("*");
+                }
+                else  {
+                   System.out.print(" ");
+               }
+
+
+            }
+            System.out.println("");
+            next++;
+            jmax--;
+
+
+        }
+    }
+
+    public static void sPattern(){
+        int j=1;
+        for(int i=1;i<6;){
+
+            if(i==j){
+                System.out.println("*");
+                j=1;
+                i++;
+            }
+            else{
+                System.out.print("*");
+                j++;
+            }
+        }
+    }
+
+    public static void oneLoopPattern(){
+        int i,j=1,k=6;
+        for(i=1;i<6;){
+            if(j==6){
+                System.out.println("*");
+                j=1;
+                i++;
+                k--;
+            }
+            else{
+                if(j<k){
+                    System.out.print(" ");
+                    j++;
+                }
+                else{
+                    System.out.print("*");
+                    j++;
+                }
+            }
+        }
+    }
+
+    public static void oneLoopPyramid(){
+        int i,j=1,k=6,temp=6;
+        for(i=1;i<6;){
+            if(j==temp){
+                System.out.println("*");
+                j=1;
+                i++;
+                k--;
+                temp++;
+            }
+            else{
+                if(j<k){
+                    System.out.print(" ");
+                    j++;
+                }
+                else{
+                    System.out.print("*");
+                    j++;
+                }
+            }
+        }
+    }
+
+    public static void oneLoopDimond(){
+        int i,j=1,k=6,temp=6,imax=12;
+        for(i=1;i<imax;){
+            if(i<imax/2){
+                if(j==temp){
+                    System.out.println("*");
+                    j=1;
+                    i++;
+                    k--;
+                    temp++;
+                }
+                else{
+                    if(j<k){
+                        System.out.print(" ");
+                        j++;
+                    }
+                    else{
+                        System.out.print("*");
+                        j++;
+                    }
+                }
+            }
+
+            else{
+                if(j==temp){
+                    System.out.println("*");
+                    j=1;
+                    i++;
+                    k++;
+                    temp--;
+                }
+                else{
+                    if(j<k){
+                        System.out.print(" ");
+                        j++;
+                    }
+                    else{
+                        System.out.print("*");
+                        j++;
+                    }
+                }
+            }
         }
     }
 }
